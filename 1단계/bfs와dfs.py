@@ -9,6 +9,14 @@ for _ in range(M):
 
 visited = [0] * (N+1)
 
+def dfs(V):
+    visited[V] = 1
+    print(V, end=' ')
+    for i in range(1, N+1):
+        if graph[V][i] == 1 and visited[i] == 0:
+            dfs(i)
+
+
 def bfs(V):
     queue = [V]
     visited[V] = 1
